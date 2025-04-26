@@ -13,7 +13,14 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+
+// CORS Configuration
+const allowedOrigins = ['https://student-management-system-hbfb.onrender.com']; // your frontend deployed URL
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true, // if you need to send cookies/auth headers, else remove this
+}));
 
 // Routes
 app.use('/api/students', require('./routes/studentRoutes'));
