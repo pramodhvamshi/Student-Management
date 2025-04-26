@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import { toast } from 'react-toastify';
+import { FaUser, FaEnvelope, FaCalendarAlt, FaBuilding, FaIdCard } from 'react-icons/fa'; // Imported Icons
 
 const StudentForm = ({ student, onSubmit, isEdit }) => {
   const [formData, setFormData] = useState({
@@ -112,7 +113,7 @@ const StudentForm = ({ student, onSubmit, isEdit }) => {
       <Form onSubmit={handleSubmit} autoComplete="off">
         <Row className="mb-4">
           <Form.Group as={Col} md="6" controlId="studentId">
-            <Form.Label><b>Student ID</b></Form.Label>
+            <Form.Label><FaIdCard className="me-2" /> <b>Student ID</b></Form.Label>
             <Form.Control
               type="text"
               placeholder="e.g., S12345"
@@ -132,7 +133,7 @@ const StudentForm = ({ student, onSubmit, isEdit }) => {
           </Form.Group>
 
           <Form.Group as={Col} md="6" controlId="email">
-            <Form.Label><b>Email</b></Form.Label>
+            <Form.Label><FaEnvelope className="me-2" /> <b>Email</b></Form.Label>
             <Form.Control
               type="email"
               name="email"
@@ -149,7 +150,7 @@ const StudentForm = ({ student, onSubmit, isEdit }) => {
 
         <Row className="mb-3">
           <Form.Group as={Col} md="6" controlId="firstName">
-            <Form.Label><b>First Name</b></Form.Label>
+            <Form.Label><FaUser className="me-2" /> <b>First Name</b></Form.Label>
             <Form.Control
               type="text"
               name="firstName"
@@ -164,7 +165,7 @@ const StudentForm = ({ student, onSubmit, isEdit }) => {
           </Form.Group>
 
           <Form.Group as={Col} md="6" controlId="lastName">
-            <Form.Label><b>Last Name</b></Form.Label>
+            <Form.Label><FaUser className="me-2" /> <b>Last Name</b></Form.Label>
             <Form.Control
               type="text"
               name="lastName"
@@ -181,7 +182,7 @@ const StudentForm = ({ student, onSubmit, isEdit }) => {
 
         <Row className="mb-3">
           <Form.Group as={Col} md="6" controlId="dob">
-            <Form.Label><b>Date of Birth</b></Form.Label>
+            <Form.Label><FaCalendarAlt className="me-2" /> <b>Date of Birth</b></Form.Label>
             <Form.Control
               type="date"
               name="dob"
@@ -195,7 +196,7 @@ const StudentForm = ({ student, onSubmit, isEdit }) => {
           </Form.Group>
 
           <Form.Group as={Col} md="6" controlId="department">
-            <Form.Label><b>Department</b></Form.Label>
+            <Form.Label><FaBuilding className="me-2" /> <b>Department</b></Form.Label>
             <Form.Select
               name="department"
               value={formData.department}
@@ -203,10 +204,14 @@ const StudentForm = ({ student, onSubmit, isEdit }) => {
               isInvalid={!!errors.department}
             >
               <option value="">Select Department</option>
-              <option value="Computer Science">Computer Science</option>
-              <option value="Electronics">Electronics</option>
-              <option value="Mechanical">Mechanical</option>
-              <option value="Civil">Civil</option>
+              <option value="Mechanical Engineering">Mechanical Engineering</option>
+              <option value="Electrical Engineering">Electrical Engineering</option>
+              <option value="Civil Engineering">Civil Engineering</option>
+              <option value="Computer Science & Engineering">Computer Science & Engineering</option>
+              <option value="Chemical Engineering">Chemical Engineering</option>
+              <option value="Aerospace Engineering">Aerospace Engineering</option>
+              <option value="Electronics & Communication Engineering">Electronics & Communication Engineering</option>
+              <option value="Information Technology">Information Technology</option>
             </Form.Select>
             <Form.Control.Feedback type="invalid">
               {errors.department}
