@@ -52,7 +52,7 @@ const AddStudentPage = () => {
           display: flex;
           flex-direction: column;
           height: 100vh;
-          background-color:rgb(242, 240, 245);
+          background-color: rgb(242, 240, 245);
         }
         .content-wrapper {
           flex: 1 1 auto;
@@ -60,7 +60,6 @@ const AddStudentPage = () => {
           justify-content: center;
           align-items: start;
           padding: 2rem;
-          overflow: hidden; /* hide main scroll */
         }
         .add-card {
           width: 720px;
@@ -72,7 +71,6 @@ const AddStudentPage = () => {
         .add-card .form-control {
           border-radius: 8px;
         }
-        
       `}</style>
     </div>
   );

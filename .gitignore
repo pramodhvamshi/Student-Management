@@ -14,7 +14,7 @@
 
 # production
 /student-management-frontend/build
-
+/student-management-backend/testMongo.js
 # misc
 .DS_Store
 .env
